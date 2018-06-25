@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<Title>VM</title>
+	</head>
+	
+	<body>
+<div class="container">
+  <form action="action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="esxi">ESXi IP Address:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="esxi" name="esxi" placeholder="ESXi IP">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label for="username">User Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="username" name="username" placeholder="username">
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="col-25">
+        <label for="password">Password</label>
+      </div>
+      <div class="col-75">
+        <input type="password" id="password" name="password" placeholder="password">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label for="vmname">VM Name:</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="vmname" name="vmname" placeholder="vmname">
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label for="osfamily">OS Family</label>
+      </div>
+      <div class="col-75">
+		  <input type="radio" name="osfamily" value="microsoftwindows" checked> Microsoft Windwos
+		  <input type="radio" name="osfamily" value="linux"> Linux
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="col-25">
+        <label for="guestID">OS</label>
+      </div>
+      <div class="col-75">
+        <select id="guestID" name="guestID">
+          <option value="rhel7_64Guest">rhel7_64Guest</option>
+          <option value="centos64Guest">centos64Guest</option>
+          <option value="ubuntu64Guest">ubuntu64Guest</option>
+        </select>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label for="memory">Memory</label>
+      </div>
+      <div class="col-75">
+        <select id="memory" name="memory">
+		 <script>
+		 for (var i = 0; i <= 7 ; i++){
+		 document.write('<option value="'+Math.pow(2 , i)+'">'+Math.pow(2 , i)+'</option>');
+		 }
+		 </script>
+        </select>
+		<select id="memory" name="memory">
+          <option value="gb">GB</option>
+          <option value="mb">MB</option>
+        </select>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-25">
+        <label for="vcpu">CPU</label>
+      </div>
+      <div class="col-75">
+        <select id="vcpu" name="vcpu">
+		 <script>
+		 for (var i = 1; i <= 20 ; i++){
+		 document.write('<option value="'+i+'">'+i+'</option>');
+		 }
+		 </script>
+        </select>
+      </div>
+    </div>
+	
+
+	<div class="row">
+      <div class="col-25">
+        <label for="hd">Hard Disk Size</label>
+      </div>
+      <div class="col-75">
+        <select id="hd" name="hd">
+		 <script>
+		 for (var i = 0; i <= 9 ; i++){
+		 document.write('<option value="'+Math.pow(2 , i)+'">'+Math.pow(2 , i)+'</option>');
+		 }
+		 </script>
+        </select>
+		<select id="hd" name="hd">
+          <option value="gb">GB</option>
+          <!--<option value="mb">MB</option>-->
+        </select>
+      </div>
+    </div>
+	
+	 <div class="row">
+      <div class="col-25">
+        <label for="nic">NIC</label>
+      </div>
+      <div class="col-75">
+        <select id="nic" name="nic">
+		<script>
+		 for (var i = 0; i <= 3 ; i++){
+		 document.write('<option value="'+Math.pow(2 , i)+'">'+Math.pow(2 , i)+'</option>');
+		 }
+		 </script>
+        </select>
+        </select>
+      </div>
+    </div>
+	
+
+	
+    <div class="row">
+      <div class="col-25">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" name="description" placeholder="Write a description..." style="height:200px; width:300px"></textarea>
+      </div>
+    </div>
+	
+    <div class="row">
+      <input type="submit" value="Launch VM">
+    </div>
+  </form>
+</div>
+	</body>
+</html>
