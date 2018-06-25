@@ -1,6 +1,32 @@
 <html>
 	<head>
 		<Title>VM</title>
+		
+		<script type="text/javascript">
+		
+		var windwos = ['Windows 7','Windows 8','Windows 10','Windows Server 2012'];
+		var linux = ['Ubuntu 14 x64','Debian x64','RedHat x64','Centos x64'];
+		
+		
+		function SetOS(MatchOS){
+		var choices = [];
+		var select = document.getElementById('guestID');
+		var tmp = '';
+		select.options.length = 0;
+		
+		switch (MatchOS){
+				case 'microsoftwindows': choices = windwos.slice(0); break;
+				case 'linux': choices = linux.slice(0); break;
+		}
+		
+		for (i=0; i<choices.length; i++){
+		tmp = choices[i]
+		select.options[select.options.length] = new Option(tmp,tmp,false,false);
+		}
+		window.onload = function () { SetOS('microsoftwindows'); }
+		
+	}
+		</script>
 	</head>
 	
 	<body>
@@ -47,8 +73,8 @@
         <label for="osfamily">OS Family</label>
       </div>
       <div class="col-75">
-		  <input type="radio" name="osfamily" value="microsoftwindows" checked> Microsoft Windwos
-		  <input type="radio" name="osfamily" value="linux"> Linux
+		  <input type="radio" name="osfamily" onclick="SetOS('microsoftwindows')" value="microsoftwindows"> Microsoft Windwos
+		  <input type="radio" name="osfamily" onclick="SetOS('linux')" value="linux"> Linux
       </div>
     </div>
 	
@@ -58,9 +84,7 @@
       </div>
       <div class="col-75">
         <select id="guestID" name="guestID">
-          <option value="rhel7_64Guest">rhel7_64Guest</option>
-          <option value="centos64Guest">centos64Guest</option>
-          <option value="ubuntu64Guest">ubuntu64Guest</option>
+		<option value="default">Choose OS Family</option>
         </select>
       </div>
     </div>
