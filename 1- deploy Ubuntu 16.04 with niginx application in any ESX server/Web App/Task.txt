@@ -1,0 +1,21 @@
+VMware vSphere Hypervisor 6 License	1N09P-8U152-L8J80-009UK-9HDMQ
+1. Login details    
+	ESX server IP    
+	Credential
+2. Option to select VM OS and Application
+3. Option to provide VM Configuration (Like memory, Hard disk, CPU, Network) 
+4. To Terminate already created VMs. 
+
+Adding OS/application in desginated repository  
+I am working on Project description  
+but it will take time 
+so you can start working parallely on developing the application 
+
+
+
+git init
+git add origin git@192.168.1.1:user1/sample-project.git
+git commit -m '1st commit'
+git add .
+git commit -m '1st commit'
+git push -u origin master

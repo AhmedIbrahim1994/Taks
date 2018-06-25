@@ -27,11 +27,29 @@
 		
 	}
 		</script>
+		<style type="text/css">
+body{
+	font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif; 
+	font-size:12px;
+}
+p, h1, form, button{border:0; margin:0; padding:0;}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform{
+	margin:0 auto;
+	width:400px;
+	padding:14px;
+}
+	/* ----------- basic ----------- */
+	#basic{
+		border:solid 2px #DEDEDE;	
+	}
+</style>
 	</head>
 	
 	<body>
 <div class="container">
-  <form action="action_page.php">
+  <form class= "myform" action="data.php" Method="POST">
     <div class="row">
       <div class="col-25">
         <label for="esxi">ESXi IP Address:</label>
@@ -73,8 +91,8 @@
         <label for="osfamily">OS Family</label>
       </div>
       <div class="col-75">
-		  <input type="radio" name="osfamily" onclick="SetOS('microsoftwindows')" value="microsoftwindows"> Microsoft Windwos
-		  <input type="radio" name="osfamily" onclick="SetOS('linux')" value="linux"> Linux
+		  <input type="radio" name="osfamily" onclick="SetOS('microsoftwindows')" value="MicroSoft Windows"> Microsoft Windwos
+		  <input type="radio" name="osfamily" onclick="SetOS('linux')" value="Linux"> Linux
       </div>
     </div>
 	
@@ -84,7 +102,7 @@
       </div>
       <div class="col-75">
         <select id="guestID" name="guestID">
-		<option value="default">Choose OS Family</option>
+		<option>Choose OS Family</option>
         </select>
       </div>
     </div>
@@ -101,7 +119,7 @@
 		 }
 		 </script>
         </select>
-		<select id="memory" name="memory">
+		<select id="memoryunit" name="memoryunit">
           <option value="gb">GB</option>
           <option value="mb">MB</option>
         </select>
@@ -150,7 +168,7 @@
       <div class="col-75">
         <select id="nic" name="nic">
 		<script>
-		 for (var i = 0; i <= 3 ; i++){
+		 for (var i = 0; i <= 2 ; i++){
 		 document.write('<option value="'+Math.pow(2 , i)+'">'+Math.pow(2 , i)+'</option>');
 		 }
 		 </script>
